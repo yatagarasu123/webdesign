@@ -1,0 +1,13 @@
+.reg_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button {
+    background: rgb(0, 229, 255);
+    color: white;
+    font-style: bold;
+    width: 80px;
+    border: none;
+    border-radius: 3px;
+}

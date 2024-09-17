@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="reg_form">
+        <h1>Реєстраційна форма</h1>
+        <form action="https://webhook.site" method="post">
+            <label for="Ім'я">Ім'я:<sups style="color: rgb(255, 0, 0);">*</sup></label>
+            <br>
+            <input type="Ім'я" name="Ім'я" id="Ім'я" required>
+            <br>
+            <label for="SurName">Прізвище:<sups style="color: rgb(255, 0, 0);">*</sup></label>
+            <br>
+            <input type="text" name="Прізвище" id="Surname" required>
+            <br>
+            <label for="email">Email:<sups style="color: rgb(255, 0, 0);">*</sup></label>
+            <br>
+            <input type="email" name=email id="email" required>
+            <br>
+            <label for="password">Пароль:<sups style="color: rgb(255, 0, 0);">*</sup></label>
+            <br>
+            <input type="password" name="Пароль" id="password" required>
+            <br>
+            <label for="C_pass">Підтвердити пароль:<sups style="color: rgb(255, 0, 0);">*</sup></label>
+            <br>
+            <input type="C_pass" name="Повторити пароль" id="C_pass" required>
+            <br><br>
+            <select name="Стать" id="gender">
+                <option value="male">Чоловіча</option>
+                <option value="female">Жіноча</option>
+            </select>
+            <button>Send</button>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,92 +1,96 @@
-/* Основні стилі для всього сайту */
+/* Загальні стилі для всього сайту */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    color: #343a40; /* Текст темно-сірого кольору */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
     padding: 0 20px;
-    line-height: 1.6;
+    line-height: 1.8;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Стилі для хедера */
+/* Хедер */
 header {
-    background-color: #212529;
-    color: white; /* Білий текст на темному фоні */
-    padding: 40px 0;
+    background: linear-gradient(135deg, #4e73df, #224abe);
+    color: #fff;
+    padding: 60px 20px;
     text-align: center;
+    border-radius: 10px;
+    margin-bottom: 40px;
 }
 
 header h1 {
-    font-size: 3em;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size: 3.5em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.85;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     margin-top: 20px;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    display: inline-block;
+    margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: rgb(0, 0, 0); /* Білий текст у навігації */
-    font-weight: 500;
+    color: #fff;
     font-size: 1.2em;
-    padding: 8px 15px;
-    border: 2px solid transparent;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: white;
-    color: #212529;
-    border-radius: 5px;
-    border-color: white;
+    background-color: #fff;
+    color: #4e73df;
 }
 
-/* Стилі для основного контенту */
+/* Основний контент */
 main {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 main section {
+    background-color: #fff;
     margin-bottom: 40px;
-    padding: 20px;
-    background-color: #ffffff; /* Білий фон */
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    color: #343a40; /* Темний колір тексту */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Заголовки секцій */
 main section h2 {
-    font-size: 2.2em;
-    margin-bottom: 20px;
-    color: #212529; /* Темний заголовок */
-    position: relative;
-    display: inline-block;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #224abe;
+    border-left: 5px solid #4e73df;
+    padding-left: 15px;
 }
 
 main section h2:after {
     content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
+    display: block;
     width: 80px;
-    height: 3px;
-    background-color: #007bff;
+    height: 4px;
+    background-color: #4e73df;
+    margin-top: 10px;
 }
 
 /* Секція "Про мене" */
@@ -94,50 +98,52 @@ main section h2:after {
     float: left;
     margin-right: 20px;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
-    border: 4px solid #007bff;
+    border: 4px solid #4e73df;
 }
 
 #about p {
     font-size: 1.2em;
     line-height: 1.8;
-    color: #6c757d; /* Трохи світліший текст */
+    color: #555;
 }
 
-/* Стилі для списків практичних та лабораторних робіт */
+/* Списки практичних та лабораторних робіт */
 ul {
-    list-style-type: none;
-    margin-top: 10px;
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
 }
 
 ul li {
-    background-color: #f8f9fa;
+    background-color: #f9fafc;
     margin-bottom: 15px;
-    padding: 15px;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 ul li:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 ul li a {
     text-decoration: none;
-    color: #007bff;
+    color: #4e73df;
     font-size: 1.2em;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 ul li a:hover {
-    color: #0056b3;
+    color: #224abe;
 }
 
-/* Стилі для таблиць */
+/* Таблиці */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -145,49 +151,50 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #dee2e6;
+    border: 1px solid #ddd;
 }
 
 th {
-    background-color: #007bff;
-    color: white; /* Білий текст у заголовках таблиці */
+    background-color: #4e73df;
+    color: #fff;
     padding: 12px;
     text-align: left;
 }
 
 td {
-    padding: 10px;
-    background-color: #ffffff;
-    color: #343a40; /* Темний текст в клітинках таблиці */
+    padding: 12px;
+    background-color: #f9fafc;
+    color: #333;
 }
 
 caption {
     font-size: 1.5em;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: #343a40; /* Темний заголовок таблиці */
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
 }
 
 /* Футер */
 footer {
-    background-color: #212529;
-    color: white; /* Білий текст у футері */
+    background: linear-gradient(135deg, #4e73df, #224abe);
+    color: #fff;
     padding: 20px;
     text-align: center;
-    margin-top: 50px;
     border-radius: 10px;
+    margin-top: 50px;
 }
 
 footer p {
-    margin: 5px 0;
+    font-size: 1em;
+    opacity: 0.85;
 }
 
 footer a {
-    color: #007bff; /* Синє посилання у футері */
+    color: #ffdd57;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
 }
 
 footer a:hover {
-    color: #0056b3;
+    color: #ffe680;
 }

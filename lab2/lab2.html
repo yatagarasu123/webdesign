@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lab2.css">
+    <title>CSS Selectors Challenge</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="https://example.com">Про нас</a></li>
+                <li><a href="#">Послуги</a></li>
+                <li><a href="http://notrealsite.ua">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>CSS Selectors Challenge</h1>
+        <p>Це абзац тексту.</p>
+        <ul>
+            <li>Перший пункт списку</li>
+            <li class="special">Другий пункт списку</li>
+            <li>Третій пункт списку</li>
+        </ul>
+        <div class="box">
+            <p>Цей абзац знаходиться в коробці.</p>
+        </div>
+        <form>
+            <label for="input1">Поле введення 1:</label>
+            <input type="text" id="input1">
+            <label for="input2">Поле введення 2:</label>
+            <input type="text" id="input2" disabled>
+            <label for="email1">Email:</label>
+            <input type="email" id="email1">
+            <label for="input3">Поле введення 3:</label>
+            <input type="text" id="input3">
+            <label for="check1">Чекбокс 1:</label>
+            <input type="checkbox" id="check1">
+            <label for="check2">Чекбокс 2:</label>
+            <input type="checkbox" id="check2">
+        </form>
+    </div>
+    <section>
+        <h2>Додатковий розділ</h2>
+        <p>Це ще один абзац тексту в іншому розділі.</p>
+        <ul>
+            <li>Перший пункт списку</li>
+            <li>Другий пункт списку</li>
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2023 Ваша компанія. Усі права захищені.</p>
+        <a href="#">Home</a>
+    </footer>
+</body>
+</html>

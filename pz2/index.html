@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trello-Style Task Board</title>
+</head>
+<body>
+    <div class="app-container">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo">
+                    <svg height="24" width="24" viewBox="0 0 24 24" role="presentation">
+                        <path fill="currentColor" d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm1 2v14h14V5H5zm2 2h4v6H7V7zm6 0h4v10h-4V7z"/>
+                    </svg>
+                    <span>Trello Clone</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-item">Workspaces</a>
+                    <a href="#" class="nav-item">Recent</a>
+                    <a href="#" class="nav-item">Starred</a>
+                    <a href="#" class="nav-item">Templates</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <button class="create-btn">Create</button>
+            </div>
+        </nav>
+
+        <div class="banner">
+            <p>✨ Welcome to your task board! Organize your work and life.</p>
+        </div>
+
+        <main class="board-container">
+            <header class="board-header">
+                <h1>My Weekly Tasks</h1>
+                <div class="board-controls">
+                    <button class="filter-btn">Filter</button>
+                    <button class="share-btn">Share</button>
+                </div>
+            </header>
+
+            <div class="board-content">
+                <div class="list">
+                    <div class="list-header">
+                        <h3>Monday</h3>
+                        <button class="more-btn">•••</button>
+                    </div>
+                    <div class="list-cards">
+                        <div class="card">
+                            <div class="card-labels">
+                                <span class="label green"></span>
+                            </div>
+                            <p>Review project requirements</p>
+                            <div class="card-footer">
+                                <span class="due-date">Dec 16</span>
+                                <span class="attachment-icon">📎</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-labels">
+                                <span class="label red"></span>
+                            </div>
+                            <p>Team meeting at 2 PM</p>
+                        </div>
+                    </div>
+                    <button class="add-card-btn">+ Add a card</button>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h3>Tuesday</h3>
+                        <button class="more-btn">•••</button>
+                    </div>
+                    <div class="list-cards">
+                        <div class="card">
+                            <div class="card-labels">
+                                <span class="label yellow"></span>
+                            </div>
+                            <p>Design review</p>
+                        </div>
+                    </div>
+                    <button class="add-card-btn">+ Add a card</button>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h3>Wednesday</h3>
+                        <button class="more-btn">•••</button>
+                    </div>
+                    <div class="list-cards">
+                        <div class="card">
+                            <div class="card-labels">
+                                <span class="label purple"></span>
+                            </div>
+                            <p>Client presentation</p>
+                            <div class="card-footer">
+                                <span class="members">👤 2</span>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-card-btn">+ Add a card</button>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h3>Thursday</h3>
+                        <button class="more-btn">•••</button>
+                    </div>
+                    <div class="list-cards">
+                        <div class="card">
+                            <p>Development sprint</p>
+                        </div>
+                    </div>
+                    <button class="add-card-btn">+ Add a card</button>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h3>Friday</h3>
+                        <button class="more-btn">•••</button>
+                    </div>
+                    <div class="list-cards">
+                        <div class="card">
+                            <div class="card-labels">
+                                <span class="label blue"></span>
+                            </div>
+                            <p>Weekly review</p>
+                        </div>
+                    </div>
+                    <button class="add-card-btn">+ Add a card</button>
+                </div>
+
+                <div class="list">
+                    <div class="list-header">
+                        <h3>Weekend</h3>
+                        <button class="more-btn">•••</button>
+                    </div>
+                    <div class="list-cards">
+                        <div class="card">
+                            <p>Relax and recharge</p>
+                        </div>
+                    </div>
+                    <button class="add-card-btn">+ Add a card</button>
+                </div>
+
+                <div class="add-list">
+                    <button class="add-list-btn">+ Add another list</button>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

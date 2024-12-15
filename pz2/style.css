@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.4;
+    background: linear-gradient(135deg, #654ea3 0%, #da62c4 100%);
+    color: #172b4d;
+    height: 100vh;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.create-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.create-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Banner Styles */
+.banner {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Board Styles */
+.board-container {
+    flex: 1;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.board-header h1 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.board-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.board-controls button {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.board-controls button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.board-content {
+    display: flex;
+    gap: 1rem;
+    height: calc(100vh - 180px);
+    padding-bottom: 1rem;
+}
+
+/* List Styles */
+.list {
+    background-color: #ebecf0;
+    border-radius: 3px;
+    width: 272px;
+    min-width: 272px;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-header {
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-header h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.more-btn {
+    background: none;
+    border: none;
+    color: #6b778c;
+    cursor: pointer;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+}
+
+.more-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.list-cards {
+    padding: 0 0.5rem;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Card Styles */
+.card {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25);
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #f4f5f7;
+}
+
+.card-labels {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.label {
+    width: 40px;
+    height: 8px;
+    border-radius: 4px;
+}
+
+.label.green { background-color: #61bd4f; }
+.label.yellow { background-color: #f2d600; }
+.label.red { background-color: #eb5a46; }
+.label.blue { background-color: #0079bf; }
+.label.purple { background-color: #c377e0; }
+
+.card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.card-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #5e6c84;
+}
+
+/* Add Card/List Buttons */
+.add-card-btn, .add-list-btn {
+    background: none;
+    border: none;
+    color: #5e6c84;
+    padding: 0.75rem;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.add-card-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #172b4d;
+}
+
+.add-list {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    width: 272px;
+    min-width: 272px;
+}
+
+.add-list-btn {
+    color: white;
+}
+
+.add-list-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .board-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .board-content {
+        height: calc(100vh - 220px);
+    }
+}
+

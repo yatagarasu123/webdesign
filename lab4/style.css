@@ -51,18 +51,43 @@ html {
     }
 }
 
-/* Персонаж */
+/* Персонаж (Pukimon) */
 .character {
     position: absolute;
-    bottom: 70px;
-    left: -150px;
-    animation: moveCharacter 6s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    bottom: 70px; /* Відстань від землі */
+    left: -150px; /* Початкова позиція ліворуч за межами екрану */
+    animation: moveCharacter 6s cubic-bezier(0.42, 0, 0.58, 1) infinite; /* Рух по горизонталі */
 }
 
 .character img {
-    width: 150px;
-    animation: bob 0.5s infinite ease-in-out;
+    width: 150px; /* Розмір зображення */
+    height: auto;
+    animation: bobbing 0.5s infinite ease-in-out; /* Підстрибування */
 }
+
+/* Анімація руху персонажа */
+@keyframes moveCharacter {
+    0% {
+        transform: translateX(-150px); /* Початкове значення ліворуч */
+    }
+    50% {
+        transform: translateX(calc(50vw - 60px)); /* Позиція по центру */
+    }
+    100% {
+        transform: translateX(100vw); /* Кінець екрану праворуч */
+    }
+}
+
+/* Анімація підстрибування */
+@keyframes bobbing {
+    0%, 100% {
+        transform: translateY(0); /* Початкове положення */
+    }
+    50% {
+        transform: translateY(-10px); /* Підйом вгору */
+    }
+}
+
 
 /* Дерево */
 .tree {

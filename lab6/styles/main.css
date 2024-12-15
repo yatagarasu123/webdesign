@@ -1,0 +1,228 @@
+/* Base styles */
+.page {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0a2342;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Card block */
+.card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.card__header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card__title {
+    color: #e3b505;
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.card__content {
+    position: relative;
+    min-height: 300px;
+}
+
+.card__footer {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.card__signature {
+    color: #ffffff;
+    font-style: italic;
+}
+
+/* Greeting block */
+.greeting {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.greeting__text {
+    color: #ffffff;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Decoration block */
+.decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.decoration__tree {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid #2b823a;
+    margin-bottom: 20px;
+}
+
+.decoration__gifts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.decoration__gift {
+    width: 30px;
+    height: 30px;
+    background-color: #d95d39;
+}
+
+.decoration__gift--small {
+    transform: scale(0.8);
+}
+
+.decoration__gift--medium {
+    background-color: #3581b8;
+}
+
+.decoration__gift--large {
+    background-color: #5c4742;
+    transform: scale(1.2);
+}
+
+/* Snowflakes block */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.snowflakes__flake {
+    position: absolute;
+    background-color: #ffffff;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall 10s linear infinite;
+}
+
+.snowflakes__flake:nth-child(1) { left: 10%; animation-duration: 12s; animation-delay: -1s; }
+.snowflakes__flake:nth-child(2) { left: 20%; animation-duration: 15s; animation-delay: -3s; }
+.snowflakes__flake:nth-child(3) { left: 30%; animation-duration: 11s; animation-delay: -2s; }
+.snowflakes__flake:nth-child(4) { left: 40%; animation-duration: 13s; animation-delay: -4s; }
+.snowflakes__flake:nth-child(5) { left: 50%; animation-duration: 14s; animation-delay: -5s; }
+.snowflakes__flake:nth-child(6) { left: 60%; animation-duration: 16s; animation-delay: -6s; }
+.snowflakes__flake:nth-child(7) { left: 70%; animation-duration: 10s; animation-delay: -2s; }
+.snowflakes__flake:nth-child(8) { left: 80%; animation-duration: 12s; animation-delay: -1s; }
+.snowflakes__flake:nth-child(9) { left: 90%; animation-duration: 14s; animation-delay: -3s; }
+.snowflakes__flake:nth-child(10) { left: 95%; animation-duration: 15s; animation-delay: -4s; }
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Garland block */
+.garland {
+    position: absolute;
+    background: repeating-linear-gradient(
+        90deg,
+        #ff0000 0px,
+        #ff0000 10px,
+        #00ff00 10px,
+        #00ff00 20px,
+        #0000ff 20px,
+        #0000ff 30px
+    );
+    opacity: 0.7;
+    animation: twinkle 1s infinite alternate;
+}
+
+.garland--top {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-radius: 5px 5px 0 0;
+}
+
+.garland--right {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 0 5px 5px 0;
+}
+
+.garland--bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    border-radius: 0 0 5px 5px;
+}
+
+.garland--left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 5px 0 0 5px;
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+
+    .card__title {
+        font-size: 2em;
+    }
+
+    .greeting__text {
+        font-size: 1em;
+    }
+
+    .decoration__tree {
+        border-left-width: 30px;
+        border-right-width: 30px;
+        border-bottom-width: 60px;
+    }
+
+    .decoration__gift {
+        width: 20px;
+        height: 20px;
+    }
+}
+

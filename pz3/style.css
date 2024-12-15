@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.keyboard-container {
+    padding: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(31, 31, 31, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.keyboard-row {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+}
+
+.key {
+    min-width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #2a2a2a, #232323);
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+                inset 0 2px 2px rgba(255, 255, 255, 0.1);
+    user-select: none;
+}
+
+.key:hover {
+    background: linear-gradient(145deg, #ff758c, #ff7eb3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3),
+                inset 0 2px 2px rgba(255, 255, 255, 0.2);
+}
+
+.key:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.05s ease;
+}
+
+/* Special Keys */
+.key.function {
+    font-size: 12px;
+    background: linear-gradient(145deg, #1f1f1f, #181818);
+    color: #ff758c;
+}
+
+.key.backspace {
+    width: 100px;
+}
+
+.key.tab {
+    width: 70px;
+}
+
+.key.caps {
+    width: 90px;
+}
+
+.key.enter {
+    width: 90px;
+}
+
+.key.shift {
+    width: 100px;
+}
+
+.key.ctrl, .key.win, .key.alt {
+    width: 60px;
+}
+
+.key.space {
+    width: 300px;
+    background: linear-gradient(145deg, #2a2a2a, #232323);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .keyboard-container {
+        padding: 1rem;
+        transform: scale(0.8);
+    }
+
+    .key {
+        min-width: 30px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .key.space {
+        width: 200px;
+    }
+
+    .key.backspace,
+    .key.tab,
+    .key.caps,
+    .key.enter,
+    .key.shift {
+        width: 60px;
+    }
+
+    .key.ctrl,
+    .key.win,
+    .key.alt {
+        width: 45px;
+    }
+}
+
+
+/* Cherry Blossom Theme Elements */
+.keyboard::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle at center, #ff758c 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Key Press Effect */
+.key::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 8px;
+    background: linear-gradient(145deg, transparent, rgba(255, 255, 255, 0.1));
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.key:active::after {
+    opacity: 1;
+    transition: opacity 0.05s ease;
+}
+

@@ -3,71 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TikTok UI Clone</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Modern Calendar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #18181b;
+            padding: 20px;
+        }
+
+        .calendar {
+            background-color: #27272a;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .figma-link {
+            position: absolute;
+            top: -5px;
+            right: 145px;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #a1a1aa;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .figma-link:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        .calendar-header {
+            background-color: #3b82f6;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .month-year {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .nav-button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            cursor: pointer;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .prev-month {
+            left: 20px;
+        }
+
+        .next-month {
+            right: 20px;
+        }
+
+        .weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            padding: 16px;
+            background-color: #27272a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .weekdays div {
+            color: #71717a;
+            font-size: 13px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+            padding: 16px;
+        }
+
+        .days div {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 8px;
+            color: #d4d4d8;
+            transition: all 0.2s ease;
+        }
+
+        .days div:hover:not(.empty):not(.prev-month-date):not(.next-month-date) {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .prev-month-date, .next-month-date {
+            color: #52525b;
+        }
+
+        .today {
+            background-color: #3b82f6;
+            color: white !important;
+        }
+
+        .today:hover {
+            background-color: #2563eb !important;
+        }
+
+        .selected {
+            border: 2px solid #3b82f6;
+            color: #ffffff !important;
+        }
+
+        @media (max-width: 480px) {
+            .calendar {
+                max-width: 100%;
+            }
+            
+            .days div {
+                font-size: 13px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Top Navigation -->
-    <nav class="top-nav">
-        <div class="time">9:41</div>
-        <div class="status-icons">
-            <div class="signal"></div>
-            <div class="wifi"></div>
-            <div class="battery"></div>
+    <div class="calendar">
+        <a href="https://www.figma.com/design/LokVHePA7Pgw8NC4M9JxGa/📅-Datepicker-(Community)?node-id=0-1&p=f&t=MPQvO3VVOu80Gbgt-0" 
+           target="_blank" 
+           class="figma-link">
+            Figma template
+        </a>
+        <div class="calendar-header">
+            <button class="nav-button prev-month">←</button>
+            <div class="month-year">November 2022</div>
+            <button class="nav-button next-month">→</button>
         </div>
-    </nav>
-
-    <!-- Tab Navigation -->
-    <div class="tab-nav">
-        <button class="tab-btn">Following</button>
-        <button class="tab-btn active">For You</button>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div class="days">
+            <div class="prev-month-date">30</div>
+            <div class="prev-month-date">31</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+            <div>13</div>
+            <div>14</div>
+            <div>15</div>
+            <div>16</div>
+            <div>17</div>
+            <div>18</div>
+            <div>19</div>
+            <div>20</div>
+            <div>21</div>
+            <div>22</div>
+            <div>23</div>
+            <div>24</div>
+            <div class="today">25</div>
+            <div>26</div>
+            <div>27</div>
+            <div>28</div>
+            <div>29</div>
+            <div>30</div>
+            <div class="next-month-date">1</div>
+            <div class="next-month-date">2</div>
+            <div class="next-month-date">3</div>
+        </div>
     </div>
 
-    <!-- Main Content Area -->
-    <main class="content">
-        <div class="background-image"></div>
-        <!-- Video Container -->
-        <div class="video-container">
-            <div class="video-wrapper">
-                <!-- Video placeholder -->
-                <div class="video-placeholder"></div>
-            </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthYear = document.querySelector('.month-year');
+            const daysContainer = document.querySelector('.days');
+            const prevMonthBtn = document.querySelector('.prev-month');
+            const nextMonthBtn = document.querySelector('.next-month');
 
-            <!-- Right Sidebar Actions -->
-            <div class="action-bar">
-                <img src="right.png" alt="Right widgets" class="right-widgets">
-            </div>
+            let currentDate = new Date();
+            let currentMonth = currentDate.getMonth();
+            let currentYear = currentDate.getFullYear();
 
-            <!-- Video Info -->
-            <div class="video-info">
-                <img src="bottom.png" alt="Bottom widgets" class="bottom-widgets">
-            </div>
-        </div>
-    </main>
+            function updateCalendar() {
+                const firstDay = new Date(currentYear, currentMonth, 1);
+                const lastDay = new Date(currentYear, currentMonth + 1, 0);
+                const prevMonthLastDay = new Date(currentYear, currentMonth, 0);
+                const daysInMonth = lastDay.getDate();
+                const startingDay = firstDay.getDay();
 
-    <!-- Bottom Navigation -->
-    <nav class="bottom-nav">
-        <button class="nav-btn active">
-            <div class="icon home"></div>
-            <span>Home</span>
-        </button>
-        <button class="nav-btn">
-            <div class="icon discover"></div>
-            <span>Discover</span>
-        </button>
-        <button class="nav-btn">
-            <div class="icon plus"></div>
-        </button>
-        <button class="nav-btn">
-            <div class="icon inbox"></div>
-            <span>Inbox</span>
-        </button>
-        <button class="nav-btn">
-            <div class="icon profile"></div>
-            <span>Profile</span>
-        </button>
-    </nav>
+                monthYear.textContent = `${firstDay.toLocaleString('default', { month: 'long' })} ${currentYear}`;
+
+                let calendarHTML = '';
+
+                for (let i = startingDay; i > 0; i--) {
+                    calendarHTML += `<div class="prev-month-date">${prevMonthLastDay.getDate() - i + 1}</div>`;
+                }
+
+                for (let i = 1; i <= daysInMonth; i++) {
+                    if (i === currentDate.getDate() && currentMonth === currentDate.getMonth() && currentYear === currentDate.getFullYear()) {
+                        calendarHTML += `<div class="today">${i}</div>`;
+                    } else {
+                        calendarHTML += `<div>${i}</div>`;
+                    }
+                }
+
+                const remainingDays = 42 - (startingDay + daysInMonth);
+                for (let i = 1; i <= remainingDays; i++) {
+                    calendarHTML += `<div class="next-month-date">${i}</div>`;
+                }
+
+                daysContainer.innerHTML = calendarHTML;
+
+                daysContainer.querySelectorAll('div').forEach(day => {
+                    day.addEventListener('click', function() {
+                        if (!this.classList.contains('prev-month-date') && !this.classList.contains('next-month-date')) {
+                            daysContainer.querySelectorAll('.selected').forEach(selected => selected.classList.remove('selected'));
+                            if (!this.classList.contains('today')) {
+                                this.classList.add('selected');
+                            }
+                        }
+                    });
+                });
+            }
+
+            prevMonthBtn.addEventListener('click', function() {
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                updateCalendar();
+            });
+
+            nextMonthBtn.addEventListener('click', function() {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                updateCalendar();
+            });
+
+            updateCalendar();
+        });
+    </script>
 </body>
 </html>
 
